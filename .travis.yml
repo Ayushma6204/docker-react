@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t AYUSHMA -f Dockerfile.dev .
+
+script:
+  - docker run AYUSHMA npm run test -- --coverage
